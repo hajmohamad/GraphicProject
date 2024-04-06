@@ -31,7 +31,7 @@ public class firstPractice {
         gridPane.addColumn(2);
         gridPane.setHgap(3);
         gridPane.setVgap(3);
-        Stage stage2 = new Stage();
+
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j <= 2; j++) {
@@ -43,14 +43,16 @@ public class firstPractice {
                 ImageView Image = new ImageView(image);
                 Image.setFitHeight(400);
                 Image.setFitWidth(400);
+                Stage stage2 = new Stage();
                 Scene scene = new Scene(new AnchorPane(Image), 400, 400);
                 stage2.setScene(scene);
+                stage2.initOwner(stage);
+                stage2.initModality(javafx.stage.Modality.APPLICATION_MODAL);
                 stage2.show();
             });
             gridPane.add(imageView, j , i);
         }}
-        stage2.initOwner(stage);
-        stage2.initModality(javafx.stage.Modality.APPLICATION_MODAL);
+
 
         scrollPane.setContent(gridPane);
         AnchorPane.setTopAnchor(scrollPane, 0.0);
@@ -74,6 +76,7 @@ public class firstPractice {
 
 
         Scene scene = new Scene(anchorPane);
+        stage.setTitle("میزکار عکاسی");
         stage.setScene(scene);
 
 
